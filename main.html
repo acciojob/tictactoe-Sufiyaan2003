@@ -4,30 +4,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- the entire body must be written by student -->
     <div class="container">
-        <!-- Initial view: name input form -->
+        <!-- Name input section -->
         <div id="name-form">
             <h1 class="title">Tic Tac Toe</h1>
             <form id="players-form" autocomplete="off">
                 <div>
-                    <label for="player-1">Player 1</label>
-                    <input type="text" id="player-1" placeholder="enter name" required>
+                    <label for="player1">Player 1</label>
+                    <input type="text" id="player1" placeholder="enter name" required>
                 </div>
                 <div>
-                    <label for="player-2">Player 2</label>
-                    <input type="text" id="player-2" placeholder="enter name" required>
+                    <label for="player2">Player 2</label>
+                    <input type="text" id="player2" placeholder="enter name" required>
                 </div>
                 <button type="submit" id="submit">Start Game</button>
             </form>
         </div>
-        <!-- Game elements (hidden by default) -->
+        <!-- Game area, hidden initially -->
         <div id="game-area" style="display:none;">
             <h1 class="title">Tic Tac Toe</h1>
             <div class="message"></div>
-            <div class="board">
-                <!-- Cells will be created by JS -->
-            </div>
+            <div class="board"></div>
         </div>
     </div>
     <script type="text/javascript" src="./script.js"></script>

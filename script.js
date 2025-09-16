@@ -1,4 +1,3 @@
-//your JS code here. If required.
 const form = document.getElementById('players-form');
 const nameFormDiv = document.getElementById('name-form');
 const gameArea = document.getElementById('game-area');
@@ -23,17 +22,17 @@ function createBoard() {
 
 function handleCellClick(idx) {
     if (isGameOver || board[idx]) return;
-    const symbol = currentPlayer === 0 ? 'X' : 'O';
+    const symbol = currentPlayer === 0 ? 'x' : 'o';
     board[idx] = symbol;
     const cell = boardDiv.children[idx];
     cell.textContent = symbol;
-    cell.style.fontFamily = "'Permanent Marker', cursive"; // mimic font style
+    cell.style.fontFamily = "'Permanent Marker', cursive";
 
     const winIdxs = checkWinner();
     if (winIdxs) {
         isGameOver = true;
         winIdxs.forEach(i => boardDiv.children[i].classList.add('win'));
-        messageDiv.textContent = `${players[currentPlayer]}, congratulations you won!`;
+        messageDiv.textContent = `${players[currentPlayer]} congratulations you won!`;
         return;
     } else if (board.every(Boolean)) {
         isGameOver = true;
@@ -62,8 +61,8 @@ function checkWinner() {
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
-    const p1 = document.getElementById('player-1').value.trim() || 'Player 1';
-    const p2 = document.getElementById('player-2').value.trim() || 'Player 2';
+    const p1 = document.getElementById('player1').value.trim() || 'Player1';
+    const p2 = document.getElementById('player2').value.trim() || 'Player2';
     players = [p1, p2];
     currentPlayer = 0;
     board = Array(9).fill("");
